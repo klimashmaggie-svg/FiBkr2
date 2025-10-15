@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник - Портфолио</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Портфолио студента</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="projects.html">Проекты</a></li>
+                    <li><a href="diary.html">Дневник</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="diary-section">
+            <h1>Мой учебный прогресс</h1>
+            
+            <div class="diary-content">
+                <div class="progress-list">
+                    <h2>Последние записи</h2>
+                    <div class="diary-entries">
+                        <div class="diary-entry completed">
+                            <span class="date">15 дек</span>
+                            <span class="task">Верстка макета сайта</span>
+                            <span class="status">✓</span>
+                        </div>
+                        <div class="diary-entry completed">
+                            <span class="date">10 дек</span>
+                            <span class="task">JavaScript основы</span>
+                            <span class="status">✓</span>
+                        </div>
+                        <div class="diary-entry in-progress">
+                            <span class="date">05 дек</span>
+                            <span class="task">Работа с формами</span>
+                            <span class="status">⏳</span>
+                        </div>
+                        <div class="diary-entry in-progress">
+                            <span class="date">01 дек</span>
+                            <span class="task">Адаптивный дизайн</span>
+                            <span class="status">⏳</span>
+                        </div>
+                        <div class="diary-entry pending">
+                            <span class="date">25 ноя</span>
+                            <span class="task">React компоненты</span>
+                            <span class="status">○</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="courses-progress">
+                    <h2>Текущие курсы</h2>
+                    <div class="course">
+                        <div class="course-name">
+                            <span>Веб-разработка</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress web-dev"></div>
+                        </div>
+                    </div>
+                    <div class="course">
+                        <div class="course-name">
+                            <span>JavaScript</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress js-course"></div>
+                        </div>
+                    </div>
+                    <div class="course">
+                        <div class="course-name">
+                            <span>React</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress react-course"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="add-entry">
+                <button class="btn">Добавить запись</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Портфолио студента-разработчика</p>
+        </div>
+    </footer>
+</body>
+</html>
