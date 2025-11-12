@@ -7,58 +7,92 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <header>
+    <!-- Пропуск навигации для пользователей скринридеров -->
+    <a href="#main-content" class="sr-only">Перейти к основному содержимому</a>
+    
+    <header role="banner">
         <div class="container header-content">
-            <div class="logo">Портфолио студента</div>
-            <nav>
+            <div class="logo" role="heading" aria-level="1">Портфолио студента</div>
+            <nav role="navigation" aria-label="Основная навигация">
                 <ul>
                     <li><a href="../index.html">Главная</a></li>
                     <li><a href="projects.html">Проекты</a></li>
                     <li><a href="diary.html">Дневник</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="contacts.html" aria-current="page">Контакты</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section class="contacts-section">
-            <h1>Свяжитесь со мной</h1>
+    <main class="container" id="main-content" role="main">
+        <section class="contacts-section" aria-labelledby="contacts-heading">
+            <h1 id="contacts-heading">Свяжитесь со мной</h1>
+            
+            <!-- Область для динамических сообщений -->
+            <div id="form-status" aria-live="polite" aria-atomic="true"></div>
             
             <div class="contact-content">
                 <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Имя</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Сообщение</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">Отправить сообщение</button>
+                    <form id="contact-form" novalidate>
+                        <fieldset>
+                            <legend class="sr-only">Форма обратной связи</legend>
+                            
+                            <div class="form-group">
+                                <label for="name" class="required">Имя</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    required 
+                                    aria-required="true"
+                                    aria-describedby="name-error"
+                                >
+                                <div id="name-error" class="error-message" aria-live="polite"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="required">Email</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required 
+                                    aria-required="true"
+                                    aria-describedby="email-error"
+                                >
+                                <div id="email-error" class="error-message" aria-live="polite"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="required">Сообщение</label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    rows="5" 
+                                    required 
+                                    aria-required="true"
+                                    aria-describedby="message-error"
+                                ></textarea>
+                                <div id="message-error" class="error-message" aria-live="polite"></div>
+                            </div>
+                            
+                            <button type="submit" class="btn">Отправить сообщение</button>
+                        </fieldset>
                     </form>
                 </div>
                 
                 <div class="contact-info">
                     <h3>Контакты</h3>
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
+                    <div class="contact-item" role="listitem">
+                        <span class="contact-icon" aria-hidden="true">📧</span>
                         <span>student@edu.ru</span>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📱</span>
+                    <div class="contact-item" role="listitem">
+                        <span class="contact-icon" aria-hidden="true">📱</span>
                         <span>GitHub: username</span>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
+                    <div class="contact-item" role="listitem">
+                        <span class="contact-icon" aria-hidden="true">📍</span>
                         <span>Город, Страна</span>
                     </div>
                 </div>
@@ -66,10 +100,12 @@
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>© 2024 Портфолио студента-разработчика</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
